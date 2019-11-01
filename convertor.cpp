@@ -107,8 +107,8 @@ int main(int argc, char* argv[]){
 	vector <int> terminals;
 	set <int> terminalSet;
 	string code, type, dummy;
-	int N, M; 
-  M++;//dummt stmt to avoid warning
+	int N=0, M=0; 
+  M++; //dummt stmt to avoid warning
 	while( cin>> code >> type ){
 		transform(code.begin(), code.end(), code.begin(), ::toupper);
 		if(code == "SECTION" && type =="Graph"){
