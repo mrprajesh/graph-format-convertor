@@ -189,9 +189,11 @@ int main(int argc, char* argv[]){
   if(strcmp(argv[1],"sToM") == 0)
     toMst = true;
   
-  if(toMst)
+  if(toMst){
+    cout << N-1 << " " << N-1 << " " << M << endl;
     printEdgeList(graph, true);
     
+  }
 	return 0;
 }
 
