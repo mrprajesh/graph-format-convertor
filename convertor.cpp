@@ -71,7 +71,7 @@ void printEdgeList(const vector< vector<Edge> > &graph, bool withWeight=false, b
 			if(i < graph[i][j].to){
 			//~ cout << i << " -- "<< e.to << ": " << e.length << endl;
 				if(withWeight){
-					cout << i << " "<< graph[i][j].to << " : " << graph[i][j].length <<  endl;
+					cout << i << " "<< graph[i][j].to << " " << graph[i][j].length <<  endl;
 				}else if(isViz){
 					cout << i << " -- "<< graph[i][j].to << "[label=" << graph[i][j].length << ",weight="<<  graph[i][j].length << ",color=red, penwidth=2]" <<  endl;
 				}else {
@@ -99,7 +99,12 @@ int getGraphWeight(const vector< vector<Edge> > &graph){
 
 
 int main(int argc, char* argv[]){
-    
+  
+  if(argc < 2){
+      cout << "Correct Usage: \n./"<< argv[0] << " --sToM"<< endl;
+      exit(1);
+  } 
+  
   ios_base::sync_with_stdio(false);
 
 	vector<vector<int>> tdEdge;
@@ -181,7 +186,7 @@ int main(int argc, char* argv[]){
 	
   bool toMst = false;
   
-  if(strcmp(argv[1],"toMst") == 0)
+  if(strcmp(argv[1],"sToM") == 0)
     toMst = true;
   
   if(toMst)
